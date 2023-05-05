@@ -1,0 +1,45 @@
+<div class="ContactDetails">
+    <div class="alert alert-success" *ngIf="successMessage" role="alert">
+        Data saved successfully.
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage" role="alert">
+        We're sorry, but there was an error processing your request. Please try again later.
+    </div>
+    <div class="ContactForm">
+        <h2>Get in touch</h2>
+        <form #f="ngForm" (ngSubmit)="SaveContact();f.reset();">
+            <label>Full Name</label>
+            <input type="text" pattern="[a-zA-Z ]+" name="fullName" [(ngModel)]="contact.fullName" required="">
+
+            <label>Email Address</label>
+            <input type="email" required="" ngModel [(ngModel)]="contact.email_address"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,5}$" name="email_address">
+
+            <label>Comments</label>
+            <textarea required="" minlength="10" ngModel [(ngModel)]="contact.comments" name="comments"></textarea>
+            <button type="submit" [disabled]="!f.form.valid" id="btn"><span class="noselect">Contact Me</span><span
+                    id="circle"></span></button>
+        </form>
+    </div>
+    <div class="Address">
+        <h2>Contact us</h2>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Address: Ellicott City, Maryland, USA.</p>
+        <p><i class="fa fa-phone" aria-hidden="true"></i>Phone: <a href="tel:8482608023"
+                target="_blank">848-260-8023</a>
+        </p>
+        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: <a
+                href="mailto:Balajivasi@live.com">Balajivasi@live.com</a></p>
+        <ul>
+            <li class="linkedin"><a href="https://www.linkedin.com/in/balajivasi" target="_blank"><i
+                        class="fa-brands fa-linkedin-square "></i></a></li>
+            <li class="github"><a href="https://github.com/balajivasi" target="_blank"><i
+                        class="fa-brands fa-github "></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/balajivasi" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+            <li class="whatsapp"><a href="https://wa.me/8482608023" target="_blank"><i
+                        class="fa-brands fa-whatsapp"></i></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/balajivasi68" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+    </div>
+</div>

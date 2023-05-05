@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "balajivasi": {
+      "hosting": {
+        "BalajiVasi": [
+          "balajivasi"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "balajivasi"
+  }
+}

@@ -1,1 +1,625 @@
-/* You can add global styles to this file, and also import other style files */
+$color_1: #fff;
+$color_2: #f2f2f2;
+$color_3: #eee;
+$color_4: #222;
+$color_5: #1DA1F2;
+$color_6: #25D366;
+$color_7: rgba(11, 0, 0, 0.8);
+$font-family_1: 'Gruppo', cursive;
+$font-family_2: 'Audiowide', cursive;
+$font-family_3: 'Cookie', cursive;
+$font-family_4: "FontAwesome";
+$background-color_1: #000;
+$background-color_2: #fff;
+
+@import "https://fonts.googleapis.com/css2?family=Audiowide&family=Gruppo&display=swap";
+@import "https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css";
+/*font-family: 'Audiowide', cursive;
+font-family: 'Gruppo', cursive;*/
+/* Profile Page Start*/
+/* Slide CSS*/
+/* SLIDE CSS END*/
+/* Profile Page End*/
+/* Read more button Start */
+/* Read more button End */
+/* Contact us page Start */
+/* Contact us page End */
+/* TechStack Start*/
+/* TechStack End */
+/* Extra small devices (phones, 600px and down) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* SUBmit button */
+@keyframes fly {
+	0% {
+		transform: translate3D(0, 0, 0rem);
+	}
+	50% {
+		transform: translate3D(400rem, -400rem, 0rem);
+	}
+	50.00001% {
+		transform: translate3D(-100rem, 100rem, 0rem);
+	}
+	100% {
+		transform: translate3D(0rem, 0rem, 0rem);
+	}
+}
+/* SUBmit button  END*/
+* {
+	margin: 0px;
+	padding: 0px;
+	color: $color_1;
+}
+html {
+	height: 100%;
+	background-color: $background-color_1;
+}
+a {
+	text-decoration: none;
+}
+p {
+	margin-top: 1em;
+	text-indent: 1.25em;
+	line-height: 1.25em;
+	text-align: justify;
+	font-size: 1.25em;
+}
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	color: $color_2;
+	font-family: $font-family_1;
+}
+#wrapper {
+	width: 95%;
+	margin: auto;
+	flex: 1;
+}
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 5px 0px;
+	background-color: $background-color_1;
+}
+header {
+	border-bottom: 1px solid #f2f2f2;
+	display: inline-block;
+	width: 100%;
+	padding: 20px 0;
+	h1 {
+		font-family: $font-family_2;
+		float: left;
+	}
+	nav {
+		display: inline;
+		float: right;
+		padding: 20px 0 0 0;
+		li {
+			display: inline;
+			list-style: none;
+			margin: 0;
+			padding: 0 30px;
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+main {
+	display: inline-flex;
+	width: 100%;
+	figure {
+		width: 40%;
+		display: inline-block;
+		padding-right: 5%;
+		margin-top: 1.5em;
+		img {
+			width: 100%;
+		}
+	}
+	aside {
+		width: 55%;
+		display: inline-block;
+	}
+}
+.slider-container {
+	position: relative;
+	width: 100%;
+	min-height: 400px;
+	margin-top: 2em;
+	margin-bottom: 3em;
+	overflow: hidden;
+	.slider {
+		display: flex;
+		width: 300%;
+		height: 100%;
+		transform: translateX(0%);
+		transition: transform 0.5s ease-in-out;
+		.slide {
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color_1;
+		}
+	}
+}
+.prev-btn {
+	position: absolute;
+	top: 50%;
+	font-size: 4em;
+	cursor: pointer;
+	left: 25px;
+}
+.next-btn {
+	position: absolute;
+	top: 50%;
+	font-size: 4em;
+	cursor: pointer;
+	right: 25px;
+}
+.SlideData {
+	float: left;
+	width: 100%;
+	overflow-y: scroll;
+	* {
+		font-size: 1.05em;
+	}
+}
+.slide {
+	.project {
+		float: left;
+		width: 45%;
+		ul {
+			margin-left: 3em;
+			li {
+				margin-top: .5em;
+			}
+		}
+	}
+	.AboutOrg {
+		float: right;
+		width: 45%;
+	}
+}
+.ContactBtn {
+	margin: 20px 0;
+}
+#btn {
+	background: #222;
+	height: 50px;
+	min-width: 150px;
+	border: none;
+	border-radius: 10px;
+	color: $color_3;
+	font-size: 20px;
+	font-family: $font-family_3;
+	position: relative;
+	transition: 1s;
+	-webkit-tap-highlight-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding-top: 5px;
+	#circle {
+		width: 5px;
+		height: 5px;
+		background: transparent;
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		overflow: hidden;
+		transition: 500ms;
+	}
+	.noselect {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	&:hover {
+		background: transparent;
+		#circle {
+			height: 50px;
+			width: 150px;
+			left: 0;
+			border-radius: 0;
+			border-bottom: 2px solid #eee;
+		}
+	}
+}
+.ContactDetails {
+	float: left;
+	width: 100%;
+	margin-top: 2em;
+	margin-bottom: 3em;
+	.ContactForm {
+		input {
+			height: 52px;
+			border: 0px;
+			background-color: $background-color_1;
+			border-bottom: 1px solid #222;
+			width: 100%;
+		}
+		textarea {
+			height: 52px;
+			border: 0px;
+			background-color: $background-color_1;
+			border-bottom: 1px solid #222;
+			width: 100%;
+			height: 75px;
+		}
+	}
+	.Address {
+		ul {
+			position: relative;
+			display: table;
+			width: 100%;
+			li {
+				position: relative;
+				list-style: none;
+				display: table-cell;
+				margin: 0 10px;
+				cursor: pointer;
+				a {
+					text-decoration: none;
+					font-family: $font-family_4;
+					i {
+						font-style: normal;
+					}
+					.fa-brands {
+						font-size: 3em;
+						color: $color_4;
+					}
+					&::before {
+						font-family: $font-family_4;
+						position: absolute;
+						top: 0;
+						left: 0;
+						font-size: 3em;
+						height: 0;
+						overflow: hidden;
+						transition: 0.5s ease-in-out;
+					}
+				}
+				&:hover {
+					a {
+						&::before {
+							height: 100%;
+						}
+					}
+				}
+			}
+			li.instagram {
+				a {
+					&::before {
+						content: "\f16d";
+						background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						border-bottom: 4px solid #dc2743;
+					}
+				}
+			}
+			li.linkedin {
+				a {
+					&::before {
+						content: "\f08c";
+						color: $color_5;
+						border-bottom: 4px solid #1DA1F2;
+					}
+				}
+			}
+			li.github {
+				a {
+					&::before {
+						content: "\f09b";
+						color: $color_6;
+						border-bottom: 4px solid #25D366;
+					}
+				}
+			}
+			li.facebook {
+				a {
+					&::before {
+						content: "\f09a";
+						color: $color_5;
+						border-bottom: 4px solid #1DA1F2;
+					}
+				}
+			}
+			li.whatsapp {
+				a {
+					&::before {
+						content: "\f232";
+						color: $color_6;
+						border-bottom: 4px solid #25D366;
+					}
+				}
+			}
+		}
+	}
+}
+.ContactForm {
+	float: left;
+	width: 47%;
+	label {
+		width: 100%;
+		margin-top: 2em;
+		display: inline-block;
+	}
+}
+.Address {
+	float: right;
+	width: 40%;
+	border: 1px solid #222;
+	min-height: 300px;
+	padding: 5%;
+	border-radius: 5px;
+	p {
+		margin-bottom: 2em;
+	}
+	i.fa {
+		margin-right: 3%;
+	}
+}
+.TechStack {
+	float: left;
+	width: 100%;
+	margin-top: 2em;
+	.image-list {
+		img {
+			margin: 25px;
+			width: 100px;
+		}
+	}
+}
+.submitBtn {
+	width: 85px;
+	height: 50px;
+	margin: auto;
+	label {
+		margin: 0px;
+	}
+}
+input[type='checkbox'] {
+	display: none;
+}
+.send {
+	--hue: 30deg;
+	position: relative;
+	width: 5rem;
+	height: 5rem;
+	perspective: 60rem;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	* {
+		transition: all 1s;
+		&::before {
+			transition: all 1s;
+		}
+		&::after {
+			transition: all 1s;
+		}
+	}
+	.rotate {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transform-style: preserve-3d;
+		.move {
+			transform-style: preserve-3d;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			.part {
+				position: absolute;
+				transform-style: preserve-3d;
+				width: 100%;
+				height: 100%;
+				&::before {
+					content: 'SEND';
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: $background-color_2;
+					font-size: 1rem;
+					font-weight: bold;
+					color: $color_7;
+					border: 1px solid #222;
+				}
+				&::after {
+					content: 'SEND';
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: $background-color_2;
+					font-size: 1rem;
+					font-weight: bold;
+					color: $color_7;
+					border: 1px solid #222;
+				}
+			}
+			.part.left {
+				&::before {
+					transform-origin: 50% 25%;
+					clip-path: polygon(0 0, 100% 0, 100% 1px, 0 calc(50% + 1px));
+				}
+				&::after {
+					clip-path: polygon(0 50%, 100% 0, 100% 1px, 1px 100%, 0 100%);
+				}
+			}
+			.part.right {
+				&::before {
+					clip-path: polygon(0 100%, 100% 0, 100% 1px, calc(50% + 1px) 100%, 50% 100%);
+				}
+				&::after {
+					transform-origin: 75% 50%;
+					clip-path: polygon(100% 0, 50% 100%, 100% 100%);
+				}
+			}
+		}
+	}
+}
+#send {
+	&:checked~.send {
+		.rotate {
+			transform: rotate3d(1, -0.2, 0.2, 65deg);
+			.move {
+				animation: fly 3s cubic-bezier(0.72, -0.23, 0.35, 1.03) 1s both;
+			}
+			.part.left {
+				transform: rotate3d(-1, 1, 0, 60deg);
+				&::before {
+					transform: rotate3d(-1, 0.5, 0, -60deg);
+				}
+				&::after {
+					background-color: $background-color_2;
+				}
+			}
+			.part.right {
+				transform: rotate3d(-1, 1, 0, -60deg);
+				&::before {
+					background-color: $background-color_2;
+				}
+				&::after {
+					transform: rotate3d(-0.25, 0.5, 0, 100deg);
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 600px) {
+	#wrapper {
+		width: 95%;
+	}
+	header {
+		nav {
+			li {
+				padding: 0px 7px;
+			}
+		}
+		h1 {
+			text-align: center;
+			width: 100%;
+		}
+	}
+	main {
+		display: inline;
+		figure {
+			width: 100%;
+			img {
+				object-fit: cover;
+				object-position: center;
+				height: 250px;
+			}
+		}
+		aside {
+			width: 100%;
+		}
+	}
+	.slide {
+		.project {
+			width: 100%;
+		}
+		.AboutOrg {
+			width: 100%;
+		}
+	}
+	.ContactForm {
+		width: 100%;
+		margin-bottom: 3em;
+	}
+	.Address {
+		width: 90%;
+		p {
+			text-indent: 0;
+			&:first-child {
+				text-align: center;
+			}
+		}
+	}
+	.TechStack {
+		.image-list {
+			img {
+				margin: 35px;
+			}
+		}
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+	#wrapper {
+		width: 95%;
+	}
+	.ContactForm {
+		width: 100%;
+		margin-bottom: 3em;
+	}
+	.Address {
+		width: 90%;
+	}
+	.TechStack {
+		.image-list {
+			img {
+				margin: 35px;
+			}
+		}
+	}
+}
+@media only screen and (min-width: 1200px) {
+	#wrapper {
+		width: 75%;
+	}
+	.ContactDetails {
+		.Address {
+			ul {
+				li {
+					a {
+						.fa-brands {
+							font-size: 4em;
+						}
+						&::before {
+							font-size: 4em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.alert{
+	position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
